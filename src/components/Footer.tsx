@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function index() {
+export default function Footer() {
   return (
     <div>
-      test
+      footer
     </div>
   )
 }
