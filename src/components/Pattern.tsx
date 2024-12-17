@@ -4,7 +4,7 @@ import React from "react";
 const Pattern = () => {
   return (
     <Image
-      src="/a.jpg"
+      src="/pattern.svg"
       alt="image"
       width={700}
       height={80}

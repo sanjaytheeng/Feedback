@@ -1,20 +1,26 @@
-import React from 'react'
+import React from "react";
 
-export default function HastagList() {
+export default function HastagList({
+  companyList,
+  setSelectedCompany,
+}: {
+  companyList: string[];
+  setSelectedCompany: (str: string) => void;
+}) {
   return (
-    <ul className='hashtags'>
-      <li>
-        <button>#Facebook</button>
-      </li>
-      <li>
-        <button>#LinkedIn</button>
-      </li>
-      <li>
-        <button>#KFC</button>
-      </li>
-      <li>
-        <button>#MomoStation</button>
-      </li>
+    <ul className="hashtags">
+      {companyList.map((company) => (
+        <li key={company}>
+          <button
+            value={company}
+            onClick={(e) => {
+              setSelectedCompany(e.currentTarget.value);
+            }}
+          >
+            #{company}
+          </button>
+        </li>
+      ))}
     </ul>
-  )
+  );
 }
