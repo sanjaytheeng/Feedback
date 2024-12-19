@@ -1,25 +1,18 @@
 import React from "react";
+import HastagItem from "./HastagItem";
+import { useFeedbackItemsContext } from "./context/FeedbackItemsContextProvider";
 
-export default function HastagList({
-  companyList,
-  setSelectedCompany,
-}: {
-  companyList: string[];
-  setSelectedCompany: (str: string) => void;
-}) {
+export default function HastagList() {
+  const { uniqueCompanyList: companyList, setSelectedCompany } =
+    useFeedbackItemsContext();
   return (
     <ul className="hashtags">
       {companyList.map((company) => (
-        <li key={company}>
-          <button
-            value={company}
-            onClick={(e) => {
-              setSelectedCompany(e.currentTarget.value);
-            }}
-          >
-            #{company}
-          </button>
-        </li>
+        <HastagItem
+          key={company}
+          company={company}
+          setSelectedCompany={setSelectedCompany}
+        />
       ))}
     </ul>
   );

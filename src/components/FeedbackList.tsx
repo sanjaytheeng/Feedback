@@ -2,19 +2,14 @@ import React from "react";
 import FeedbackItem from "./FeedbackItem";
 import Spinner from "./Spinner";
 import ErrorMessage from "./ErrorMessage";
-import { FeedbackItemType } from "@/lib/type";
+import { useFeedbackItemsContext } from "./context/FeedbackItemsContextProvider";
 
-type FeedbackListProps = {
-  isLoading: boolean;
-  errorMessage: string;
-  feedbackItems: FeedbackItemType[];
-};
-
-export default function FeedbackList({
-  isLoading,
-  errorMessage,
-  feedbackItems,
-}: FeedbackListProps) {
+export default function FeedbackList() {
+  const {
+    isLoading,
+    errorMessage,
+    filteredFeedbackItems: feedbackItems,
+  } = useFeedbackItemsContext();
   return (
     <ol className="feedback-list">
       {isLoading ? <Spinner /> : null}

@@ -8,6 +8,9 @@ export default function FeedbackForm({
   onAddToList: (str: string) => void;
 }) {
   const [text, setText] = useState<string>("");
+  const [showValidIndicator, setShowValidIndicator] = useState<boolean>(false);
+  const [showInvalidIndicator, setShowInvalidalidIndicator] =
+    useState<boolean>(false);
 
   const charCount = text.length;
   const remainingCharacters = MAX_CHARACTERS - charCount;
@@ -20,12 +23,23 @@ export default function FeedbackForm({
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (text.includes("#") && text.length > -5) {
+      setShowValidIndicator(true);
+    } else {
+      setShowInvalidalidIndicator(true);
+      return;
+    }
     onAddToList(text);
     setText("");
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
+    <form
+      className={`form ${showValidIndicator ? "form--valid" : ""} ${
+        showInvalidIndicator ? "form--invalid" : ""
+      }`}
+      onSubmit={handleSubmit}
+    >
       <textarea
         name=""
         value={text}

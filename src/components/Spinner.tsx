@@ -1,9 +1,9 @@
 import React from "react";
-
+import PacmanLoader from "react-spinners/PacmanLoader";
 export default function Spinner() {
   return (
-    <div className="parent">
-      <div className="spinner" />
+    <div className="spinner">
+      <PacmanLoader />
     </div>
   );
 }
