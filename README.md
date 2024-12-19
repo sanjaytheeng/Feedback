@@ -1,4 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# MovieSearchEngiene
+This is a project where we can see the feedbacks given by the user and others using context API
+
+## Guides
+- clone
+```bash
+git clone https://github.com/sanjaytheeng/Feedback---React
+```
+- run
+```bash
+npm install
+```
+```bash
+npm run dev
+```
+## Screenshots
+<img width="1709" alt="image" src="https://github.com/user-attachments/assets/793001c5-dea8-4fc8-bc67-bec1608ac6dc" />
+
+## Support
+You can use the documentation of [React](https://legacy.reactjs.org/docs/getting-started.html).
+
+## Deploy in Vercel
+The react project can be easily deployed using [Vercel](https://vercel.com/home).
+Please check the [document related to Vercel](https://vercel.com/docs) for further details
+
+If you prefer using the terminal then
+```bash
+npm install -g vercel
+```
+```bash
+vercel login
+```
 
 ## Getting Started
 
